@@ -21,7 +21,8 @@ class AltenativeController extends Controller
      */
     public function create()
     {
-        return view('alternative.create');
+        $siswa = DB::table('candidates')->get();
+        return view('alternative.create', compact('siswa'));
     }
 
     /**
@@ -29,12 +30,24 @@ class AltenativeController extends Controller
      */
     public function store(Request $request)
     {
+
+         $rows = DB::table('criteria')->get()->toArray();
+         
          $data = [
                 "alternative"=>$request->alternative,
                 "c1"=>$request->c1,
                 "c2"=>$request->c2,
                 "c3"=>$request->c3,
                 "c4"=>$request->c4,
+                "c11"=>$rows[0]->bobot,
+                "c22"=>$rows[1]->bobot,
+                "c33"=>$rows[2]->bobot,
+                "c44"=>$rows[3]->bobot,
+                "c111"=>($rows[0]->bobot * $request->c1),
+                "c222"=>($rows[1]->bobot * $request->c2),
+                "c333"=>($rows[2]->bobot * $request->c3),
+                "c444"=>($rows[3]->bobot * $request->c4),
+                "jumlah" =>($rows[0]->bobot * $request->c1) + ($rows[1]->bobot * $request->c2) + ($rows[2]->bobot * $request->c3) + ($rows[3]->bobot * $request->c4),
                 "created_at"=>date("Y-m-d H:i:s"),
                 "updated_at"=>date("Y-m-d H:i:s"),
         ];

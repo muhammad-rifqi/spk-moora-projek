@@ -5,6 +5,7 @@ use App\Http\Controllers\CandidateController;
 use App\Http\Controllers\CriteriaController;
 use App\Http\Controllers\AltenativeController;
 use App\Http\Controllers\MooraController;
+use App\Http\Controllers\ReportController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -50,6 +51,12 @@ Route::middleware('auth')->group(function () {
     Route::get('/alternative/add', [AltenativeController::class, 'create']);
     Route::post('/alternative/store', [AltenativeController::class, 'store']);
     Route::get('/alternative/delete/{id}', [AltenativeController::class, 'destroy']);
+
+
+
+
+
+    Route::get('/report/pdf', [ReportController::class, 'pdf']);
 
     Route::get('/moora/process',
         [MooraController::class, 'process'])

@@ -24,7 +24,7 @@
                    <table id="datasiswa" class="display">
                         <thead>
                             <tr>
-                                <th>Alternative</th>
+                                <th align="left">Alternative</th>
                                 <th>c1</th>
                                 <th>c2</th>
                                 <th>c3</th>
@@ -35,7 +35,7 @@
                         <tbody>
                             @foreach($alternative as $data)
                             <tr>
-                                <td>{{$data->alternative}}</td>
+                                <td align="left">{{$data->alternative}}</td>
                                 <td>{{$data->c1}}</td>
                                 <td>{{$data->c2}}</td>
                                 <td>{{$data->c3}}</td>

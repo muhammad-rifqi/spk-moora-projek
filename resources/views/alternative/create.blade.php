@@ -16,15 +16,20 @@
 
                         <div class="mb-4">
                             <label for="c1" class="block text-sm font-medium text-gray-700">
-                                Alternative
+                                Alternative / Siswa
                             </label>
-                            <input
+                            <select
                                 type="text"
                                 id="alternative"
                                 name="alternative"
                                 class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
                                 placeholder="Masukkan Alternative"
                             >
+                            <option value="NULL">Pilih Alternative / Kode Siswa</option>
+                            @foreach($siswa as $row)
+                                <option value="{{$row->nis_nim}}">{{$row->nama}} || {{$row->nis_nim}}</option>
+                            @endforeach
+                            </select>
                         </div>
 
                         <!-- Nama -->
