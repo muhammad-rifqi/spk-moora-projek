@@ -1,0 +1,8 @@
+ubah .env.example menjadi .env
+terus jalankan perintah
+npm install 
+npm run build
+
+untuk node.js download disini : https://nodejs.org/id/download/archive/v22.22.2
+cari yang file .msi 
+sesuai dengan bit kompter 64/86
