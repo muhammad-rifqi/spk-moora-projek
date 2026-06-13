@@ -12,7 +12,8 @@ class PipController extends Controller
      */
     public function index()
     {
-        //
+        $pip = DB::table('alternative')->get();
+        return view('moora.index', compact('pip'));
     }
 
     /**

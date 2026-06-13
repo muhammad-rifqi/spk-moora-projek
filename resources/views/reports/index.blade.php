@@ -5,13 +5,60 @@
         </h2>
     </x-slot>
 
-    <div class="py-12">
+     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
-                    {{ __("You're logged in!") }}
+                    <div class="mb-4">
+                        <a href="/report/pdf"
+                        class="bg-blue-500 hover:bg-blue-100 text-white font-bold py-2 px-4 rounded" style="background-color: blue">
+                            Cetak Laporan
+                        </a>
+                    </div>
+                   <table class="display p-3" width="100%" border="1" cellpadding="10" cellspacing="0">
+                        <thead>
+                            <tr style="border-bottom: 1px solid #000;">
+                                <th align="left">Nama</th>
+                                <th align="left">C1</th>
+                                <th align="left">C2</th>
+                                <th align="left">C3</th>
+                                <th align="left">C4</th>
+                                <th align="left">C1</th>
+                                <th align="left">C2</th>
+                                <th align="left">C3</th>
+                                <th align="left">C4</th>
+                                <th align="left">C1</th>
+                                <th align="left">C2</th>
+                                <th align="left">C3</th>
+                                <th align="left">C4</th>
+                                <th align="left">JUMLAH</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach($laporan as $data)
+                            <tr>
+                                <td align="left">{{$data->alternative}}</td>
+                                <td align="left">{{$data->c1}}</td>
+                                <td align="left">{{$data->c2}}</td>
+                                <td align="left">{{$data->c3}}</td>
+                                <td align="left">{{$data->c4}}</td>
+                                <td align="left">{{$data->c11}}</td>
+                                <td align="left">{{$data->c22}}</td>
+                                <td align="left">{{$data->c33}}</td>
+                                <td align="left">{{$data->c44}}</td>
+                                <td align="left">{{$data->c111}}</td>
+                                <td align="left">{{$data->c222}}</td>
+                                <td align="left">{{$data->c333}}</td>
+                                <td align="left">{{$data->c444}}</td>
+                                <td align="left">{{$data->jumlah}}</td>
+                            </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
     </div>
+
+
 </x-app-layout>

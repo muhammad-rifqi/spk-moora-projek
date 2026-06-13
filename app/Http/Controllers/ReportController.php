@@ -11,22 +11,24 @@ class ReportController extends Controller
     /**
      * Display a listing of the resource.
      */
+
+    public function index (){
+        
+        $laporan = DB::table('alternative')->orderBy('jumlah', 'desc')->limit(20)->get();
+        return view('reports.index', compact('laporan'));
+
+    }
+
+
     public function pdf()
         {
-            $users = [
-                [
-                    'name' => 'Rifqi',
-                    'email' => 'rifqi@example.com'
-                ],
-                [
-                    'name' => 'Budi',
-                    'email' => 'budi@example.com'
-                ]
-            ];
+            $laporan = DB::table('alternative')->orderBy('jumlah', 'desc')->get();
 
-            $pdf = Pdf::loadView('reports.users', compact('users'));
+            $pdf = Pdf::loadView('reports.laporan', [
+                'rows' => $laporan
+            ])->setPaper('legal', 'landscape');
 
-            return $pdf->download('laporan-user.pdf');
+            return $pdf->download(date("YmdHis").'.pdf');
         }
 
     /**

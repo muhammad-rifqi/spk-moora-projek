@@ -6,6 +6,7 @@ use App\Http\Controllers\CriteriaController;
 use App\Http\Controllers\AltenativeController;
 use App\Http\Controllers\MooraController;
 use App\Http\Controllers\ReportController;
+use App\Http\Controllers\PipController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -52,10 +53,9 @@ Route::middleware('auth')->group(function () {
     Route::post('/alternative/store', [AltenativeController::class, 'store']);
     Route::get('/alternative/delete/{id}', [AltenativeController::class, 'destroy']);
 
+    Route::get('/pip', [PipController::class, 'index']);
 
-
-
-
+    Route::get('/report', [ReportController::class, 'index']);
     Route::get('/report/pdf', [ReportController::class, 'pdf']);
 
     Route::get('/moora/process',

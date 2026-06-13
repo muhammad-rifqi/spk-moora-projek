@@ -27,7 +27,7 @@
                             >
                             <option value="NULL">Pilih Alternative / Kode Siswa</option>
                             @foreach($siswa as $row)
-                                <option value="{{$row->nis_nim}}">{{$row->nama}} || {{$row->nis_nim}}</option>
+                                <option value="{{$row->nis_nim}}-{{$row->nama}}">{{$row->nama}} || {{$row->nis_nim}}</option>
                             @endforeach
                             </select>
                         </div>
