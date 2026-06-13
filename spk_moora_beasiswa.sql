@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 07, 2026 at 12:23 PM
+-- Generation Time: Jun 13, 2026 at 06:43 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.1.25
 
@@ -24,6 +24,40 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `alternative`
+--
+
+CREATE TABLE `alternative` (
+  `id` int(11) NOT NULL,
+  `alternative` varchar(50) DEFAULT NULL,
+  `c1` int(11) NOT NULL DEFAULT 0,
+  `c2` int(11) NOT NULL DEFAULT 0,
+  `c3` int(11) NOT NULL DEFAULT 0,
+  `c4` int(11) NOT NULL DEFAULT 0,
+  `c11` decimal(8,4) DEFAULT NULL,
+  `c22` decimal(8,4) DEFAULT NULL,
+  `c33` decimal(8,4) DEFAULT NULL,
+  `c44` decimal(8,4) DEFAULT NULL,
+  `c111` decimal(8,4) DEFAULT NULL,
+  `c222` decimal(8,4) DEFAULT NULL,
+  `c333` decimal(8,4) DEFAULT NULL,
+  `c444` decimal(8,4) DEFAULT NULL,
+  `jumlah` decimal(8,4) DEFAULT NULL,
+  `created_at` datetime NOT NULL,
+  `updated_at` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `alternative`
+--
+
+INSERT INTO `alternative` (`id`, `alternative`, `c1`, `c2`, `c3`, `c4`, `c11`, `c22`, `c33`, `c44`, `c111`, `c222`, `c333`, `c444`, `jumlah`, `created_at`, `updated_at`) VALUES
+(9, '12345678-Muhammad Rifqi', 4, 7, 3, 1, 0.4500, 0.2500, 0.1000, 0.2000, 1.8000, 1.7500, 0.3000, 0.2000, 4.0500, '2026-06-13 16:11:05', '2026-06-13 16:11:05'),
+(10, '1234567891234-Zaqi', 6, 5, 5, 3, 0.4500, 0.2500, 0.1000, 0.2000, 2.7000, 1.2500, 0.5000, 0.6000, 5.0500, '2026-06-13 16:11:23', '2026-06-13 16:11:23');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `candidates`
 --
 
@@ -35,26 +69,21 @@ CREATE TABLE `candidates` (
   `tempat_lahir` varchar(100) DEFAULT NULL,
   `tanggal_lahir` date DEFAULT NULL,
   `alamat` text DEFAULT NULL,
-  `no_hp` varchar(20) DEFAULT NULL,
+  `prestasi` varchar(20) DEFAULT NULL,
+  `penghasilan_ayah` int(11) NOT NULL DEFAULT 0,
+  `penghasilan_ibu` int(11) NOT NULL DEFAULT 0,
+  `jumlah_saudara` int(11) NOT NULL DEFAULT 0,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- --------------------------------------------------------
-
 --
--- Table structure for table `candidate_scores`
+-- Dumping data for table `candidates`
 --
 
-CREATE TABLE `candidate_scores` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `period_id` bigint(20) UNSIGNED NOT NULL,
-  `candidate_id` bigint(20) UNSIGNED NOT NULL,
-  `criteria_id` bigint(20) UNSIGNED NOT NULL,
-  `nilai` decimal(12,4) NOT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+INSERT INTO `candidates` (`id`, `nis_nim`, `nama`, `jenis_kelamin`, `tempat_lahir`, `tanggal_lahir`, `alamat`, `prestasi`, `penghasilan_ayah`, `penghasilan_ibu`, `jumlah_saudara`, `created_at`, `updated_at`) VALUES
+(3, '12345678', 'Muhammad Rifqi', 'L', 'Payakumbuh', '1988-12-27', 'tangerang', '-', 100000, 0, 4, '2026-06-13 08:45:52', '2026-06-13 08:45:52'),
+(4, '1234567891234', 'Zaqi', 'L', 'Padang', '1983-07-20', 'Bukti Tinggi', '-', 2000000, 0, 2, '2026-06-13 08:46:42', '2026-06-13 08:46:42');
 
 -- --------------------------------------------------------
 
@@ -77,10 +106,10 @@ CREATE TABLE `criteria` (
 --
 
 INSERT INTO `criteria` (`id`, `kode`, `nama_kriteria`, `tipe`, `bobot`, `created_at`, `updated_at`) VALUES
-(1, 'C1', 'Penghasilan Orang Tua', 'cost', 0.3000, NULL, NULL),
-(2, 'C2', 'Nilai Rapor', 'benefit', 0.2500, NULL, NULL),
-(3, 'C3', 'Jumlah Tanggungan', 'benefit', 0.2000, NULL, NULL),
-(4, 'C4', 'Prestasi Akademik', 'benefit', 0.2500, NULL, NULL);
+(1, 'C1', 'Penghasilan Ayah', 'cost', 0.4500, '2026-06-13 07:30:43', '2026-06-13 07:30:43'),
+(2, 'C2', 'Penghasilan Ibu', 'benefit', 0.2500, '2026-06-13 07:31:09', '2026-06-13 07:31:09'),
+(3, 'C3', 'Jumlah Saudara', 'benefit', 0.1000, '2026-06-13 07:31:46', '2026-06-13 07:31:46'),
+(4, 'C4', 'Prestasi', 'benefit', 0.2000, '2026-06-13 07:31:39', '2026-06-13 07:31:39');
 
 -- --------------------------------------------------------
 
@@ -92,68 +121,6 @@ CREATE TABLE `migrations` (
   `id` int(10) UNSIGNED NOT NULL,
   `migration` varchar(255) NOT NULL,
   `batch` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `periods`
---
-
-CREATE TABLE `periods` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `nama_periode` varchar(100) NOT NULL,
-  `tahun` year(4) NOT NULL,
-  `kuota` int(11) NOT NULL DEFAULT 0,
-  `status` enum('aktif','nonaktif') DEFAULT 'aktif',
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `rankings`
---
-
-CREATE TABLE `rankings` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `period_id` bigint(20) UNSIGNED NOT NULL,
-  `candidate_id` bigint(20) UNSIGNED NOT NULL,
-  `nilai_moora` decimal(18,8) NOT NULL,
-  `ranking` int(11) NOT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `scholarship_recipients`
---
-
-CREATE TABLE `scholarship_recipients` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `period_id` bigint(20) UNSIGNED NOT NULL,
-  `candidate_id` bigint(20) UNSIGNED NOT NULL,
-  `ranking` int(11) NOT NULL,
-  `nilai_moora` decimal(18,8) NOT NULL,
-  `tanggal_penetapan` date NOT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `sub_criteria`
---
-
-CREATE TABLE `sub_criteria` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `criteria_id` bigint(20) UNSIGNED NOT NULL,
-  `nama_sub` varchar(150) NOT NULL,
-  `nilai` decimal(8,2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -185,62 +152,28 @@ INSERT INTO `users` (`id`, `name`, `email`, `password`, `role`, `remember_token`
 --
 
 --
+-- Indexes for table `alternative`
+--
+ALTER TABLE `alternative`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `candidates`
 --
 ALTER TABLE `candidates`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `nis_nim` (`nis_nim`);
-
---
--- Indexes for table `candidate_scores`
---
-ALTER TABLE `candidate_scores`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `fk_score_period` (`period_id`),
-  ADD KEY `fk_score_candidate` (`candidate_id`),
-  ADD KEY `fk_score_criteria` (`criteria_id`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `criteria`
 --
 ALTER TABLE `criteria`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `kode` (`kode`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `migrations`
 --
 ALTER TABLE `migrations`
   ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `periods`
---
-ALTER TABLE `periods`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `rankings`
---
-ALTER TABLE `rankings`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `fk_rank_period` (`period_id`),
-  ADD KEY `fk_rank_candidate` (`candidate_id`);
-
---
--- Indexes for table `scholarship_recipients`
---
-ALTER TABLE `scholarship_recipients`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `fk_recipient_period` (`period_id`),
-  ADD KEY `fk_recipient_candidate` (`candidate_id`);
-
---
--- Indexes for table `sub_criteria`
---
-ALTER TABLE `sub_criteria`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `fk_subcriteria_criteria` (`criteria_id`);
 
 --
 -- Indexes for table `users`
@@ -254,22 +187,22 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT for table `alternative`
+--
+ALTER TABLE `alternative`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
 -- AUTO_INCREMENT for table `candidates`
 --
 ALTER TABLE `candidates`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `candidate_scores`
---
-ALTER TABLE `candidate_scores`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `criteria`
 --
 ALTER TABLE `criteria`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `migrations`
@@ -278,66 +211,10 @@ ALTER TABLE `migrations`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `periods`
---
-ALTER TABLE `periods`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `rankings`
---
-ALTER TABLE `rankings`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `scholarship_recipients`
---
-ALTER TABLE `scholarship_recipients`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `sub_criteria`
---
-ALTER TABLE `sub_criteria`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- Constraints for dumped tables
---
-
---
--- Constraints for table `candidate_scores`
---
-ALTER TABLE `candidate_scores`
-  ADD CONSTRAINT `fk_score_candidate` FOREIGN KEY (`candidate_id`) REFERENCES `candidates` (`id`) ON DELETE CASCADE,
-  ADD CONSTRAINT `fk_score_criteria` FOREIGN KEY (`criteria_id`) REFERENCES `criteria` (`id`) ON DELETE CASCADE,
-  ADD CONSTRAINT `fk_score_period` FOREIGN KEY (`period_id`) REFERENCES `periods` (`id`) ON DELETE CASCADE;
-
---
--- Constraints for table `rankings`
---
-ALTER TABLE `rankings`
-  ADD CONSTRAINT `fk_rank_candidate` FOREIGN KEY (`candidate_id`) REFERENCES `candidates` (`id`) ON DELETE CASCADE,
-  ADD CONSTRAINT `fk_rank_period` FOREIGN KEY (`period_id`) REFERENCES `periods` (`id`) ON DELETE CASCADE;
-
---
--- Constraints for table `scholarship_recipients`
---
-ALTER TABLE `scholarship_recipients`
-  ADD CONSTRAINT `fk_recipient_candidate` FOREIGN KEY (`candidate_id`) REFERENCES `candidates` (`id`) ON DELETE CASCADE,
-  ADD CONSTRAINT `fk_recipient_period` FOREIGN KEY (`period_id`) REFERENCES `periods` (`id`) ON DELETE CASCADE;
-
---
--- Constraints for table `sub_criteria`
---
-ALTER TABLE `sub_criteria`
-  ADD CONSTRAINT `fk_subcriteria_criteria` FOREIGN KEY (`criteria_id`) REFERENCES `criteria` (`id`) ON DELETE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
