@@ -13,7 +13,7 @@ class CandidateController extends Controller
      */
     public function index()
     {
-        $siswa = DB::table('users')->get();
+        $siswa = DB::table('candidates')->get();
         return view('candidates.index', compact('siswa'));
     }
 
@@ -23,7 +23,7 @@ class CandidateController extends Controller
      */
     public function create()
     {
-        //
+        return view('candidates.create');
     }
 
     /**
@@ -32,7 +32,28 @@ class CandidateController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = [
+                "nis_nim"=>$request->nis_nim,
+                "nama"=>$request->nama,
+                "jenis_kelamin"=>$request->jenis_kelamin,
+                "tempat_lahir"=>$request->tempat_lahir,
+                "tanggal_lahir"=>$request->tanggal_lahir,
+                "alamat"=>$request->address,
+                "prestasi"=>$request->prestasi,
+                "penghasilan_ayah"=>$request->penghasilan_ayah,
+                "penghasilan_ibu"=>$request->penghasilan_ibu,
+                "jumlah_saudara"=>$request->jumlah_saudara,
+                "created_at"=>date("Y-m-d H:i:s"),
+                "updated_at"=>date("Y-m-d H:i:s"),
+        ];
+       
+       $insert =  DB::table('candidates')->insert($data);
+       if($insert){
+            return redirect('/candidates')->with('status', 'Success Insert');
+       }else{
+            return redirect('/candidates')->with('status', 'Failed Insert');
+       }
+
     }
 
     /**
@@ -50,7 +71,8 @@ class CandidateController extends Controller
      */
     public function edit(string $id)
     {
-        //
+         $data = DB::table('candidates')->where('id', '=' , $id)->first();
+         return view('candidates.edit', compact('data'));
     }
 
     /**
@@ -59,7 +81,28 @@ class CandidateController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+
+        $value = [
+                "nis_nim"=>$request->nis_nim,
+                "nama"=>$request->nama,
+                "jenis_kelamin"=>$request->jenis_kelamin,
+                "tempat_lahir"=>$request->tempat_lahir,
+                "tanggal_lahir"=>$request->tanggal_lahir,
+                "alamat"=>$request->address,
+                "prestasi"=>$request->prestasi,
+                "penghasilan_ayah"=>$request->penghasilan_ayah,
+                "penghasilan_ibu"=>$request->penghasilan_ibu,
+                "jumlah_saudara"=>$request->jumlah_saudara,
+                "created_at"=>date("Y-m-d H:i:s"),
+                "updated_at"=>date("Y-m-d H:i:s"),
+        ];
+       
+       $updated =  DB::table('candidates')->where('id',$id)->update($value);
+       if($updated){
+            return redirect('/candidates')->with('status', 'Success Update');
+       }else{
+            return redirect('/candidates')->with('status', 'Failed Update');
+       }
     }
 
     /**
@@ -68,6 +111,12 @@ class CandidateController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+            $data = DB::table('candidates')->where('id', $id)->delete();
+            if($data){
+                return redirect('/candidates')->with('status', 'Success Deleted!');
+            }else{
+                return redirect('/candidates')->with('status', 'Failed Deleted!');
+            }
+            
     }
 }

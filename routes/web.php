@@ -3,10 +3,6 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\CandidateController;
 use App\Http\Controllers\CriteriaController;
-use App\Http\Controllers\SubCriteriaController;
-use App\Http\Controllers\PeriodController;
-use App\Http\Controllers\CandidateScoreController;
-use App\Http\Controllers\RankingController;
 use App\Http\Controllers\MooraController;
 use Illuminate\Support\Facades\Route;
 
@@ -34,8 +30,20 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     
-    Route::resource('candidates', CandidateController::class);
-    Route::resource('criteria', CriteriaController::class);
+    Route::get('/candidates', [CandidateController::class, 'index']);
+    Route::get('/candidates/add', [CandidateController::class, 'create']);
+    Route::post('/candidates/store', [CandidateController::class, 'store']);
+    Route::get('/candidates/edit/{id}', [CandidateController::class, 'edit']);
+    Route::post('/candidates/update/{id}', [CandidateController::class, 'update']);
+    Route::get('/candidates/delete/{id}', [CandidateController::class, 'destroy']);
+    
+    
+    Route::get('/criteria', [CriteriaController::class, 'index']);
+    Route::get('/criteria/add', [CriteriaController::class, 'create']);
+    Route::post('/criteria/store', [CriteriaController::class, 'store']);
+    Route::get('/criteria/edit/{id}', [CriteriaController::class, 'edit']);
+    Route::post('/criteria/update/{id}', [CriteriaController::class, 'update']);
+    Route::get('/criteria/delete/{id}', [CriteriaController::class, 'destroy']);
 
     Route::get('/moora/process',
         [MooraController::class, 'process'])

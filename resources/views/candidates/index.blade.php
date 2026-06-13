@@ -9,6 +9,18 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
+                    @if(session('status'))
+                        <div class="border border-green-400 text-green-700 px-4 py-3 rounded mb-4" style="background-color:green; color: white">
+                            {{ session('status') }}
+                        </div>
+                    @endif
+
+                    <div class="mb-4">
+                        <a href="/candidates/add"
+                        class="bg-blue-500 hover:bg-blue-100 text-white font-bold py-2 px-4 rounded" style="background-color: blue">
+                            + Tambah Siswa
+                        </a>
+                    </div>
                    <table id="datasiswa" class="display">
                         <thead>
                             <tr>
@@ -22,6 +34,7 @@
                                 <th>Penghasilan Ibu</th>
                                 <th>Jumlah Sodara</th>
                                 <th>Prestasi</th>
+                                <th>#</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -37,6 +50,8 @@
                                 <td>{{$data->penghasilan_ibu}}</td>
                                 <td>{{$data->jumlah_saudara}}</td>
                                 <td>{{$data->prestasi}}</td>
+                                <td><a href="/candidates/edit/{{$data->id}}" class="text-white py-1 px-3 rounded" style="background-color:orange">Edit</a>  
+                                <a href="/candidates/delete/{{$data->id}}" class="bg-red-500 hover:bg-red-700 text-white py-1 px-3 rounded" onclick="return confirm('Apakah Kamu Yakin ?')">Hapus</a></td>
                             </tr>
                             @endforeach
                         </tbody>
@@ -52,6 +67,7 @@
                                 <th>Penghasilan Ibu</th>
                                 <th>Jumlah Sodara</th>
                                 <th>Prestasi</th>
+                                 <th>#</th>
                             </tr>
                         </tfoot>
                     </table>
