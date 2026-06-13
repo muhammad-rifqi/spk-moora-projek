@@ -45,9 +45,9 @@
                             Kriteria
                         </a>
 
-                        <!-- <a href="/subcriteria" class="block px-4 py-2 hover:bg-gray-100">
-                            Sub Kriteria
-                        </a> -->
+                        <a href="/alternative" class="block px-4 py-2 hover:bg-gray-100">
+                            Altenative
+                        </a>
 
                     </div>
                 </div>

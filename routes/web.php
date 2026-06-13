@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\CandidateController;
 use App\Http\Controllers\CriteriaController;
+use App\Http\Controllers\AltenativeController;
 use App\Http\Controllers\MooraController;
 use Illuminate\Support\Facades\Route;
 
@@ -44,6 +45,13 @@ Route::middleware('auth')->group(function () {
     Route::get('/criteria/edit/{id}', [CriteriaController::class, 'edit']);
     Route::post('/criteria/update/{id}', [CriteriaController::class, 'update']);
     Route::get('/criteria/delete/{id}', [CriteriaController::class, 'destroy']);
+
+    Route::get('/alternative', [AltenativeController::class, 'index']);
+    Route::get('/alternative/add', [AltenativeController::class, 'create']);
+    Route::post('/alternative/store', [AltenativeController::class, 'store']);
+    Route::get('/alternative/edit/{id}', [AltenativeController::class, 'edit']);
+    Route::post('/alternative/update/{id}', [AltenativeController::class, 'update']);
+    Route::get('/alternative/delete/{id}', [AltenativeController::class, 'destroy']);
 
     Route::get('/moora/process',
         [MooraController::class, 'process'])
