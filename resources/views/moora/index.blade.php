@@ -12,40 +12,28 @@
                    <table id="datasiswa" class="display">
                         <thead>
                             <tr>
+                                <th>ID</th>
                                 <th>Nama</th>
                                 <th>C1</th>
                                 <th>C2</th>
                                 <th>C3</th>
                                 <th>C4</th>
-                                <th>C1</th>
-                                <th>C2</th>
-                                <th>C3</th>
-                                <th>C4</th>
-                                <th>C1</th>
-                                <th>C2</th>
-                                <th>C3</th>
-                                <th>C4</th>
-                                <th>JUMLAH</th>
+                                <th>NILAI</th>
                             </tr>
                         </thead>
                         <tbody>
+                            <?php $no = 1; ?>
                             @foreach($pip as $data)
                             <tr>
+                                <td>{{$no}}</td>
                                 <td>{{$data->alternative}}</td>
                                 <td>{{$data->c1}}</td>
                                 <td>{{$data->c2}}</td>
                                 <td>{{$data->c3}}</td>
                                 <td>{{$data->c4}}</td>
-                                <td>{{$data->c11}}</td>
-                                <td>{{$data->c22}}</td>
-                                <td>{{$data->c33}}</td>
-                                <td>{{$data->c44}}</td>
-                                <td>{{$data->c111}}</td>
-                                <td>{{$data->c222}}</td>
-                                <td>{{$data->c333}}</td>
-                                <td>{{$data->c444}}</td>
                                 <td>{{$data->jumlah}}</td>
                             </tr>
+                            <?php $no++; ?>
                             @endforeach
                         </tbody>
                         <tfoot>
@@ -55,15 +43,7 @@
                                 <th>C2</th>
                                 <th>C3</th>
                                 <th>C4</th>
-                                <th>C1</th>
-                                <th>C2</th>
-                                <th>C3</th>
-                                <th>C4</th>
-                                <th>C1</th>
-                                <th>C2</th>
-                                <th>C3</th>
-                                <th>C4</th>
-                                <th>JUMLAH</th>
+                                <th>NILAI</th>
                             </tr>
                         </tfoot>
                     </table>

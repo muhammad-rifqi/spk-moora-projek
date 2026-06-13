@@ -9,6 +9,37 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
+                   <table class="display" width="100%" border=1>
+                        <thead>
+                            <tr>
+                                <th align="left">Jenis Kriteria</th>
+                                <th align="left">Nama Kriteria</th>
+                                <th align="left">Kode</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td align="left">Terbaik (Best)</td>
+                                <td align="left">Penghasilan Ayah</td>
+                                <td align="left">C1</td>
+                            </tr>
+                            <tr>
+                                <td align="left">Terburuk (Worst)</td>
+                                <td align="left">Jumlah Saudara</td>
+                                <td align="left">C3</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="py-12">
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+                <div class="p-6 text-gray-900">
                     @if(session('status'))
                         <div class="border border-green-400 text-green-700 px-4 py-3 rounded mb-4" style="background-color:green; color: white">
                             {{ session('status') }}
@@ -24,6 +55,7 @@
                    <table id="datasiswa" class="display">
                         <thead>
                             <tr>
+                                <th>ID</th>
                                 <th align="left">Alternative</th>
                                 <th>c1</th>
                                 <th>c2</th>
@@ -33,8 +65,10 @@
                             </tr>
                         </thead>
                         <tbody>
+                            <?php $no = 1; ?>
                             @foreach($alternative as $data)
                             <tr>
+                                <td>{{$no}}</td>
                                 <td align="left">{{$data->alternative}}</td>
                                 <td>{{$data->c1}}</td>
                                 <td>{{$data->c2}}</td>
@@ -42,6 +76,7 @@
                                 <td>{{$data->c4}}</td>
                                 <td><a href="/alternative/delete/{{$data->id}}" class="bg-red-500 hover:bg-red-700 text-white py-1 px-3 rounded" onclick="return confirm('Apakah Kamu Yakin ?')">Hapus</a></td>
                             </tr>
+                            <?php $no++; ?>
                             @endforeach
                         </tbody>
                         <tfoot>
@@ -59,4 +94,7 @@
             </div>
         </div>
     </div>
+
+    
+
 </x-app-layout>

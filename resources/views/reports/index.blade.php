@@ -18,40 +18,28 @@
                    <table class="display p-3" width="100%" border="1" cellpadding="10" cellspacing="0">
                         <thead>
                             <tr style="border-bottom: 1px solid #000;">
+                                <th align="left">ID</th>
                                 <th align="left">Nama</th>
                                 <th align="left">C1</th>
                                 <th align="left">C2</th>
                                 <th align="left">C3</th>
                                 <th align="left">C4</th>
-                                <th align="left">C1</th>
-                                <th align="left">C2</th>
-                                <th align="left">C3</th>
-                                <th align="left">C4</th>
-                                <th align="left">C1</th>
-                                <th align="left">C2</th>
-                                <th align="left">C3</th>
-                                <th align="left">C4</th>
-                                <th align="left">JUMLAH</th>
+                                <th align="left">NILAI</th>
                             </tr>
                         </thead>
                         <tbody>
+                            <?php $no = 1; ?>
                             @foreach($laporan as $data)
                             <tr>
+                                <td align="left">{{$no}}</td>
                                 <td align="left">{{$data->alternative}}</td>
                                 <td align="left">{{$data->c1}}</td>
                                 <td align="left">{{$data->c2}}</td>
                                 <td align="left">{{$data->c3}}</td>
                                 <td align="left">{{$data->c4}}</td>
-                                <td align="left">{{$data->c11}}</td>
-                                <td align="left">{{$data->c22}}</td>
-                                <td align="left">{{$data->c33}}</td>
-                                <td align="left">{{$data->c44}}</td>
-                                <td align="left">{{$data->c111}}</td>
-                                <td align="left">{{$data->c222}}</td>
-                                <td align="left">{{$data->c333}}</td>
-                                <td align="left">{{$data->c444}}</td>
                                 <td align="left">{{$data->jumlah}}</td>
                             </tr>
+                            <?php $no++; ?>
                             @endforeach
                         </tbody>
                     </table>

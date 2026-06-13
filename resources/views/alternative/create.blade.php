@@ -23,7 +23,7 @@
                                 id="alternative"
                                 name="alternative"
                                 class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
-                                placeholder="Masukkan Alternative"
+                                placeholder="Masukkan Alternative" required
                             >
                             <option value="NULL">Pilih Alternative / Kode Siswa</option>
                             @foreach($siswa as $row)
@@ -42,7 +42,7 @@
                                 id="c1"
                                 name="c1"
                                 class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
-                                placeholder="Masukkan c1"
+                                placeholder="Masukkan c1" required
                             >
                         </div>
 
@@ -55,7 +55,7 @@
                                 id="c2"
                                 name="c2"
                                 class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
-                                placeholder="Masukkan c2"
+                                placeholder="Masukkan c2" required
                             >
                         </div>                    
 
@@ -68,7 +68,7 @@
                                 id="c3"
                                 name="c3"
                                 class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
-                                placeholder="Masukkan c3"
+                                placeholder="Masukkan c3" required
                             >
 
                         </div>
@@ -82,7 +82,7 @@
                                 id="c4"
                                 name="c4"
                                 class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
-                                placeholder="Masukkan c3"
+                                placeholder="Masukkan c4" required
                             >
 
                         </div>

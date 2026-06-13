@@ -26,7 +26,7 @@ class ReportController extends Controller
 
             $pdf = Pdf::loadView('reports.laporan', [
                 'rows' => $laporan
-            ])->setPaper('legal', 'landscape');
+            ])->setPaper('a4', 'potrait');
 
             return $pdf->download(date("YmdHis").'.pdf');
         }

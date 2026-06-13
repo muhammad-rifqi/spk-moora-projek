@@ -23,7 +23,7 @@
                                 id="kode"
                                 name="kode"
                                 class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
-                                placeholder="Masukkan Kode"
+                                placeholder="Masukkan Kode" required
                             >
                         </div>
 
@@ -36,7 +36,7 @@
                                 id="nama_kriteria"
                                 name="nama_kriteria"
                                 class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
-                                placeholder="Masukkan Nama Kriteria"
+                                placeholder="Masukkan Nama Kriteria" required
                             >
                         </div>                    
 
@@ -48,7 +48,7 @@
                                 type="radio"
                                 id="tipe"
                                 name="tipe"
-                                value="benefit"
+                                value="benefit" checked
                             > Benefit
 
                              <input
@@ -69,7 +69,7 @@
                                 id="bobot"
                                 name="bobot"
                                 class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
-                                placeholder="Masukkan Bobot"
+                                placeholder="Masukkan Bobot" required
                             >
                         </div>
 

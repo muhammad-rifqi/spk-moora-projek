@@ -23,7 +23,7 @@
                                 id="nis_nim"
                                 name="nis_nim"
                                 class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
-                                placeholder="Masukkan nis"
+                                placeholder="Masukkan nis" required
                             >
                         </div>
 
@@ -36,7 +36,7 @@
                                 id="nama"
                                 name="nama"
                                 class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
-                                placeholder="Masukkan Nama"
+                                placeholder="Masukkan Nama" required
                             >
                         </div>
 
@@ -48,7 +48,7 @@
                             <input
                                 type="radio"
                                 id="jenis_kelamin"
-                                name="jenis_kelamin" value="L"> Laki Laki
+                                name="jenis_kelamin" value="L" checked> Laki Laki
                             <input
                                 type="radio"
                                 id="jenis_kelamin"
@@ -65,7 +65,7 @@
                                 id="tempat_lahir"
                                 name="tempat_lahir"
                                 class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
-                                placeholder="Masukkan Tempat Lahir"
+                                placeholder="Masukkan Tempat Lahir" required
                             >
                         </div>
 
@@ -78,7 +78,7 @@
                                 id="tanggal_lahir"
                                 name="tanggal_lahir"
                                 class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
-                                placeholder="Masukkan Tanggal Lahir"
+                                placeholder="Masukkan Tanggal Lahir" required
                             >
                         </div>
 
@@ -105,7 +105,7 @@
                                 id="prestasi"
                                 name="prestasi"
                                 class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
-                                placeholder="Masukkan Prestasi"
+                                placeholder="Masukkan Prestasi" required
                             >
                         </div>
 
@@ -118,7 +118,7 @@
                                 id="penghasilan_ayah"
                                 name="penghasilan_ayah"
                                 class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
-                                placeholder="Masukkan Penghasilan Ayah"
+                                placeholder="Masukkan Penghasilan Ayah" required
                             >
                         </div>
 
@@ -131,7 +131,7 @@
                                 id="penghasilan_ibu"
                                 name="penghasilan_ibu"
                                 class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
-                                placeholder="Masukkan Penghasilan Ibu"
+                                placeholder="Masukkan Penghasilan Ibu" required
                             >
                         </div>
 
@@ -144,7 +144,7 @@
                                 id="jumlah_saudara"
                                 name="jumlah_saudara"
                                 class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
-                                placeholder="Masukkan Jumlah Saudara"
+                                placeholder="Masukkan Jumlah Saudara" required
                             >
                         </div>
 
