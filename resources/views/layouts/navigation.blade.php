@@ -38,22 +38,22 @@
                         class="absolute left-0 mt-2 w-56 bg-white rounded-md shadow-lg border z-50">
 
                         <a href="/candidates" class="block px-4 py-2 hover:bg-gray-100">
-                            Calon Penerima
+                            Siswa
                         </a>
 
                         <a href="/criteria" class="block px-4 py-2 hover:bg-gray-100">
                             Kriteria
                         </a>
 
-                        <a href="/subcriteria" class="block px-4 py-2 hover:bg-gray-100">
+                        <!-- <a href="/subcriteria" class="block px-4 py-2 hover:bg-gray-100">
                             Sub Kriteria
-                        </a>
+                        </a> -->
 
                     </div>
                 </div>
 
                 {{-- Seleksi --}}
-                <div x-data="{ open:false }" class="relative">
+                <!-- <div x-data="{ open:false }" class="relative">
                     <button @click="open=!open"
                         class="inline-flex items-center px-3 py-2 text-sm font-medium text-gray-700 hover:text-indigo-600">
                         Seleksi
@@ -77,10 +77,10 @@
                         </a>
 
                     </div>
-                </div>
+                </div> -->
 
                 {{-- Perhitungan --}}
-                <div x-data="{ open:false }" class="relative">
+                <!-- <div x-data="{ open:false }" class="relative">
                     <button @click="open=!open"
                         class="inline-flex items-center px-3 py-2 text-sm font-medium text-gray-700 hover:text-indigo-600">
                         Perhitungan
@@ -104,10 +104,10 @@
                         </a>
 
                     </div>
-                </div>
+                </div> -->
 
                 {{-- Laporan --}}
-                <div x-data="{ open:false }" class="relative">
+                <!-- <div x-data="{ open:false }" class="relative">
                     <button @click="open=!open"
                         class="inline-flex items-center px-3 py-2 text-sm font-medium text-gray-700 hover:text-indigo-600">
                         Laporan
@@ -135,6 +135,17 @@
                         </a>
 
                     </div>
+                </div> -->
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                     <a href="/pip" class="inline-flex items-center px-3 py-2 text-sm font-medium text-gray-700 hover:text-indigo-600">
+                        PIP
+                    </a>
+                </div>
+
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                     <a href="/report" class="inline-flex items-center px-3 py-2 text-sm font-medium text-gray-700 hover:text-indigo-600">
+                        Report
+                    </a>
                 </div>
 
             </div>
