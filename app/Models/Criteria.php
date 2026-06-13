@@ -11,15 +11,4 @@ class Criteria extends Model
 
     protected $table = 'criteria';
 
-    protected $fillable = [
-        'kode',
-        'nama_kriteria',
-        'tipe',
-        'bobot'
-    ];
-
-    public function subCriteria()
-    {
-        return $this->hasMany(SubCriteria::class);
-    }
 }

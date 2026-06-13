@@ -10,6 +10,7 @@
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+        <link href="https://cdn.datatables.net/2.3.8/css/dataTables.dataTables.css" type="text/css" rel="stylesheet">
 
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
@@ -33,4 +34,11 @@
             </main>
         </div>
     </body>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" type="text/javascript"></script>
+    <script src="https://cdn.datatables.net/2.3.8/js/dataTables.js" type="text/javascript"></script>
+    <script>
+        $(document).ready(function() {
+           new DataTable('#datasiswa');
+        });
+        </script>
 </html>

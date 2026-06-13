@@ -36,12 +36,6 @@ Route::middleware('auth')->group(function () {
     
     Route::resource('candidates', CandidateController::class);
     Route::resource('criteria', CriteriaController::class);
-    Route::resource('subcriteria', SubCriteriaController::class);
-
-    Route::resource('periods', PeriodController::class);
-    Route::resource('scores', CandidateScoreController::class);
-
-    Route::resource('rankings', RankingController::class);
 
     Route::get('/moora/process',
         [MooraController::class, 'process'])

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class CandidateController extends Controller
 {
@@ -12,7 +13,8 @@ class CandidateController extends Controller
      */
     public function index()
     {
-        return view('candidates.index');
+        $siswa = DB::table('users')->get();
+        return view('candidates.index', compact('siswa'));
     }
 
     /**
