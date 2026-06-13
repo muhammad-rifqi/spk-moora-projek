@@ -12,8 +12,8 @@ class AltenativeController extends Controller
      */
     public function index()
     {
-        $altenative = DB::table('altenative')->get();
-        return view('altenative.index', compact('altenative'));
+        $alternative = DB::table('alternative')->get();
+        return view('alternative.index', compact('alternative'));
     }
 
     /**
@@ -21,7 +21,7 @@ class AltenativeController extends Controller
      */
     public function create()
     {
-        return view('altenative.create');
+        return view('alternative.create');
     }
 
     /**
@@ -29,7 +29,22 @@ class AltenativeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+         $data = [
+                "alternative"=>$request->alternative,
+                "c1"=>$request->c1,
+                "c2"=>$request->c2,
+                "c3"=>$request->c3,
+                "c4"=>$request->c4,
+                "created_at"=>date("Y-m-d H:i:s"),
+                "updated_at"=>date("Y-m-d H:i:s"),
+        ];
+       
+       $insert =  DB::table('alternative')->insert($data);
+       if($insert){
+            return redirect('/alternative')->with('status', 'Success Insert');
+       }else{
+            return redirect('/alternative')->with('status', 'Failed Insert');
+       }
     }
 
     /**
@@ -61,6 +76,11 @@ class AltenativeController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+            $data = DB::table('alternative')->where('id', $id)->delete();
+            if($data){
+                return redirect('/alternative')->with('status', 'Success Deleted!');
+            }else{
+                return redirect('/alternative')->with('status', 'Failed Deleted!');
+            }
     }
 }

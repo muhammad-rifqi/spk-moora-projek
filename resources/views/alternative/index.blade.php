@@ -16,15 +16,15 @@
                     @endif
 
                     <div class="mb-4">
-                        <a href="/altenative/add"
+                        <a href="/alternative/add"
                         class="bg-blue-500 hover:bg-blue-100 text-white font-bold py-2 px-4 rounded" style="background-color: blue">
-                            + Tambah Altenative
+                            + Tambah Alternative
                         </a>
                     </div>
                    <table id="datasiswa" class="display">
                         <thead>
                             <tr>
-                                <th>ID</th>
+                                <th>Alternative</th>
                                 <th>c1</th>
                                 <th>c2</th>
                                 <th>c3</th>
@@ -33,21 +33,20 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach($altenative as $data)
+                            @foreach($alternative as $data)
                             <tr>
-                                <td>{{$data->id}}</td>
+                                <td>{{$data->alternative}}</td>
                                 <td>{{$data->c1}}</td>
                                 <td>{{$data->c2}}</td>
                                 <td>{{$data->c3}}</td>
                                 <td>{{$data->c4}}</td>
-                                <td><a href="/altenative/edit/{{$data->id}}" class="text-white py-1 px-3 rounded" style="background-color:orange">Edit</a>  
-                                <a href="/altenative/delete/{{$data->id}}" class="bg-red-500 hover:bg-red-700 text-white py-1 px-3 rounded" onclick="return confirm('Apakah Kamu Yakin ?')">Hapus</a></td>
+                                <td><a href="/alternative/delete/{{$data->id}}" class="bg-red-500 hover:bg-red-700 text-white py-1 px-3 rounded" onclick="return confirm('Apakah Kamu Yakin ?')">Hapus</a></td>
                             </tr>
                             @endforeach
                         </tbody>
                         <tfoot>
                             <tr>
-                                <th>ID</th>
+                                <th>Alternative</th>
                                 <th>c1</th>
                                 <th>c2</th>
                                 <th>c3</th>

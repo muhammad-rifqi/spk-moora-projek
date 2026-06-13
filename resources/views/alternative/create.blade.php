@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Altenative Create') }}
+            {{ __('Alternative Create') }}
         </h2>
     </x-slot>
 
@@ -10,9 +10,23 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
                     
-                 <h2 class="text-2xl font-bold mb-6">Form Data Altenative</h2>
-                    <form action="/altenative/store" method="POST">
+                 <h2 class="text-2xl font-bold mb-6">Form Data Alternative</h2>
+                    <form action="/alternative/store" method="POST">
                         @csrf
+
+                        <div class="mb-4">
+                            <label for="c1" class="block text-sm font-medium text-gray-700">
+                                Alternative
+                            </label>
+                            <input
+                                type="text"
+                                id="alternative"
+                                name="alternative"
+                                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+                                placeholder="Masukkan Alternative"
+                            >
+                        </div>
+
                         <!-- Nama -->
                         <div class="mb-4">
                             <label for="c1" class="block text-sm font-medium text-gray-700">

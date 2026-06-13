@@ -49,8 +49,6 @@ Route::middleware('auth')->group(function () {
     Route::get('/alternative', [AltenativeController::class, 'index']);
     Route::get('/alternative/add', [AltenativeController::class, 'create']);
     Route::post('/alternative/store', [AltenativeController::class, 'store']);
-    Route::get('/alternative/edit/{id}', [AltenativeController::class, 'edit']);
-    Route::post('/alternative/update/{id}', [AltenativeController::class, 'update']);
     Route::get('/alternative/delete/{id}', [AltenativeController::class, 'destroy']);
 
     Route::get('/moora/process',

@@ -26,7 +26,7 @@
                             <tr>
                                 <th>ID</th>
                                 <th>Kode</th>
-                                <th>Nama Kriteria	</th>
+                                <th>Nama Kriteria</th>
                                 <th>Tipe</th>
                                 <th>Bobot</th>
                                 <th>#</th>
@@ -60,4 +60,36 @@
             </div>
         </div>
     </div>
+
+    <div class="py-12">
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+                <div class="p-6 text-gray-900">
+                   <table class="display" width="100%" border=1>
+                        <thead>
+                            <tr>
+                                <th align="left">Jenis Kriteria</th>
+                                <th align="left">Nama Kriteria</th>
+                                <th align="left">Kode</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td align="left">Terbaik (Best)</td>
+                                <td align="left">Penghasilan Ayah</td>
+                                <td align="left">C1</td>
+                            </tr>
+                            <tr>
+                                <td align="left">Terburuk (Worst)</td>
+                                <td align="left">Jumlah Saudara</td>
+                                <td align="left">C3</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
 </x-app-layout>
