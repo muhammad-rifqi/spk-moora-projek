@@ -1,5 +1,6 @@
 ubah .env.example menjadi .env
 terus jalankan perintah
+composer install
 npm install 
 npm run build
 
