@@ -148,6 +148,12 @@
                     </a>
                 </div>
 
+                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                     <a href="/report/informasi" class="inline-flex items-center px-3 py-2 text-sm font-medium text-gray-700 hover:text-indigo-600">
+                        Information
+                    </a>
+                </div>
+
             </div>
 
             <!-- Settings Dropdown -->

@@ -78,4 +78,10 @@ class ReportController extends Controller
     {
         //
     }
+
+    public function informasi()
+    {
+        $data = DB::table('alternative')->orderBy('jumlah', 'desc')->limit(20)->get();
+        return view('reports.informasi', compact('data'));
+    }
 }

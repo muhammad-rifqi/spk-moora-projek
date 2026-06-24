@@ -59,6 +59,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/report', [ReportController::class, 'index']);
     Route::get('/report/pdf', [ReportController::class, 'pdf']);
 
+    Route::get('/report/informasi', [ReportController::class, 'informasi']);
+
     Route::get('/moora/process',
         [MooraController::class, 'process'])
         ->name('moora.process');
