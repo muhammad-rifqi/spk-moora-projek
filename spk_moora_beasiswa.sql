@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 13, 2026 at 06:43 PM
+-- Generation Time: Jun 28, 2026 at 03:30 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.1.25
 
@@ -134,7 +134,7 @@ CREATE TABLE `users` (
   `name` varchar(150) NOT NULL,
   `email` varchar(150) NOT NULL,
   `password` varchar(255) NOT NULL,
-  `role` enum('admin','operator','kepala_sekolah') DEFAULT 'operator',
+  `role` enum('admin','operator','kepala_sekolah','siswa') DEFAULT 'admin',
   `remember_token` varchar(100) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -145,7 +145,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `password`, `role`, `remember_token`, `created_at`, `updated_at`) VALUES
-(2, 'Administrator', 'admin@sekolah.sch.id', '$2y$12$S51igzVxUwRwhi/ZCKtqrufPhwolQimFSI1CO9EFEdqtz4VsJ80.S', 'operator', NULL, '2026-06-05 21:18:39', '2026-06-05 21:18:39');
+(2, 'Administrator', 'admin@sekolah.sch.id', '$2y$12$S51igzVxUwRwhi/ZCKtqrufPhwolQimFSI1CO9EFEdqtz4VsJ80.S', 'admin', NULL, '2026-06-05 21:18:39', '2026-06-05 21:18:39'),
+(3, 'Siswa', 'siswa@sekolah.sch.id', '$2y$12$P8tVRejQPQ63.85CdZrv1O0rh9Dn3C74QSYsdPSdxPmmxO46WqNPe', 'siswa', NULL, '2026-06-28 06:05:23', '2026-06-28 06:05:23');
 
 --
 -- Indexes for dumped tables
@@ -214,7 +215,7 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

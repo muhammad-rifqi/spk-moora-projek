@@ -19,9 +19,12 @@
 
             </div>
 
+
             <div class="hidden sm:flex sm:items-center sm:ms-10 space-x-8">
 
                 {{-- Master Data --}}
+
+                @if(Auth::user()->role == 'admin' || Auth::user()->role == 'operator' || Auth::user()->role == 'kepala_sekolah')
                 <div x-data="{ open:false }" class="relative">
                     <button @click="open=!open"
                         class="inline-flex items-center px-3 py-2 text-sm font-medium text-gray-700 hover:text-indigo-600">
@@ -51,6 +54,7 @@
 
                     </div>
                 </div>
+                @endif
 
                 {{-- Seleksi --}}
                 <!-- <div x-data="{ open:false }" class="relative">
@@ -136,11 +140,13 @@
 
                     </div>
                 </div> -->
+                @if(Auth::user()->role == 'admin' || Auth::user()->role == 'operator' || Auth::user()->role == 'kepala_sekolah')
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                      <a href="/pip" class="inline-flex items-center px-3 py-2 text-sm font-medium text-gray-700 hover:text-indigo-600">
                         PIP
                     </a>
                 </div>
+                @endif 
 
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                      <a href="/report" class="inline-flex items-center px-3 py-2 text-sm font-medium text-gray-700 hover:text-indigo-600">
