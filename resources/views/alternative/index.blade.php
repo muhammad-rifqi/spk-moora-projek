@@ -56,20 +56,23 @@
                         <thead>
                             <tr>
                                 <th>ID</th>
+                                <th align="left">NIS</th>
                                 <th align="left">Alternative</th>
-                                <th>c1</th>
-                                <th>c2</th>
-                                <th>c3</th>
-                                <th>c4</th>
+                                <th>Kriteria 1</th>
+                                <th>Kriteria 2</th>
+                                <th>Kriteria 3</th>
+                                <th>Kriteria 4</th>
                                 <th>#</th>
                             </tr>
                         </thead>
                         <tbody>
                             <?php $no = 1; ?>
                             @foreach($alternative as $data)
+                            <?php $exp = explode("-",$data->alternative); ?>
                             <tr>
                                 <td>{{$no}}</td>
-                                <td align="left">{{$data->alternative}}</td>
+                                <td align="left">{{ $exp[0] }}</td>
+                                <td align="left">{{ $exp[1] }}</td>
                                 <td>{{$data->c1}}</td>
                                 <td>{{$data->c2}}</td>
                                 <td>{{$data->c3}}</td>
@@ -81,11 +84,13 @@
                         </tbody>
                         <tfoot>
                             <tr>
-                                <th>Alternative</th>
-                                <th>c1</th>
-                                <th>c2</th>
-                                <th>c3</th>
-                                <th>c4</th>
+                               <th>ID</th>
+                                <th align="left">NIS</th>
+                                <th align="left">Alternative</th>
+                                <th>Kriteria 1</th>
+                                <th>Kriteria 2</th>
+                                <th>Kriteria 3</th>
+                                <th>Kriteria 4</th>
                                 <th>#</th>
                             </tr>
                         </tfoot>

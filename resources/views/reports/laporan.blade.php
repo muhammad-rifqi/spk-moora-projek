@@ -27,20 +27,23 @@
     <thead>
         <tr>
             <th align="left">No</th>
+            <th align="left">NIS</th>
             <th align="left">Nama</th>
-            <th align="left">C1</th>
-            <th align="left">C2</th>
-            <th align="left">C3</th>
-            <th align="left">C4</th>
+            <th align="left">Kriteria 1</th>
+            <th align="left">Kriteria 2</th>
+            <th align="left">Kriteria3</th>
+            <th align="left">Kriteria 4</th>
             <th align="left">NILAI</th>
         </tr>
     </thead>
     <tbody>
         <?php $no = 1; ?>
         @foreach($rows as $data)
+        <?php $exp = explode("-",$data->alternative); ?>
         <tr>
             <th align="left">{{$no}}</th>
-            <td align="left">{{$data->alternative}}</td>
+            <td align="left">{{$exp[0]}}</td>
+            <td align="left">{{$exp[1]}}</td>
             <td align="left">{{$data->c1}}</td>
             <td align="left">{{$data->c2}}</td>
             <td align="left">{{$data->c3}}</td>
