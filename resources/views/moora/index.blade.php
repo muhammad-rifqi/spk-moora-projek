@@ -38,6 +38,7 @@
                         </tbody>
                         <tfoot>
                             <tr>
+                                <th>ID</th>
                                 <th>Nama</th>
                                 <th>C1</th>
                                 <th>C2</th>

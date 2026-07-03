@@ -14,7 +14,10 @@ class ReportController extends Controller
 
     public function index (){
         
-        $laporan = DB::table('alternative')->orderBy('jumlah', 'desc')->limit(20)->get();
+        
+
+        //$laporan = DB::table('alternative')->orderBy('jumlah', 'desc')->limit(20)->get();
+        $laporan = DB::table('candidates')->orderBy('id','desc')->get();
         return view('reports.index', compact('laporan'));
 
     }
@@ -22,7 +25,8 @@ class ReportController extends Controller
 
     public function pdf()
         {
-            $laporan = DB::table('alternative')->orderBy('jumlah', 'desc')->get();
+             $laporan = DB::table('candidates')->orderBy('id','desc')->get();
+            //  $laporan = DB::table('alternative')->orderBy('jumlah', 'desc')->get();
 
             $pdf = Pdf::loadView('reports.laporan', [
                 'rows' => $laporan
@@ -81,7 +85,8 @@ class ReportController extends Controller
 
     public function informasi()
     {
-        $data = DB::table('alternative')->orderBy('jumlah', 'desc')->limit(20)->get();
+        // $data = DB::table('alternative')->orderBy('jumlah', 'desc')->limit(20)->get();
+        $data = DB::table('candidates')->orderBy('id','desc')->get();
         return view('reports.informasi', compact('data'));
     }
 }

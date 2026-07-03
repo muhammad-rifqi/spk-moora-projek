@@ -96,90 +96,56 @@
                             ></textarea>
                         </div>
 
+                        <div class="mb-4">
+                            <label for="prestasi" class="block text-sm font-medium text-gray-700">
+                                Prestasi
+                            </label>
+                            <input
+                                type="text"
+                                id="prestasi"
+                                name="prestasi"
+                                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+                                placeholder="Masukkan Prestasi" required
+                            >
+                        </div>
 
                         <div class="mb-4">
                             <label for="penghasilan_ayah" class="block text-sm font-medium text-gray-700">
                                 Penghasilan Ayah
                             </label>
-                            <select
+                            <input
+                                type="number"
                                 id="penghasilan_ayah"
                                 name="penghasilan_ayah"
                                 class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
                                 placeholder="Masukkan Penghasilan Ayah" required
-                            > 
-                            <option value="0">Pilih Penghasilan Ayah </option>
-                            <option value="Rp0-Rp300000|9">Rp0 - Rp300.000 </option>  
-                            <option value="Rp300000-Rp500000|8">Rp300.000 - Rp500.000 </option>  
-                            <option value="Rp500000-Rp1000000|7">Rp500.000 - Rp1.000.000 </option>  
-                            <option value="Rp1000000-Rp1500000|6">Rp1.000.000 - Rp1.500.000 </option>  
-                            <option value="Rp1500000-Rp1800000|5">Rp1.500.000 - Rp1.800.000 </option>                      
-                            <option value="Rp1800000-Rp3000000|4">Rp1.800.000 - Rp3.000.000 </option>  
-                            <option value="Rp3000000-Rp4900000|3">Rp3.000.000 - Rp4.900.000 </option>  
-                            <option value="Rp4900000-Rp6000000|2">Rp4.900.000 - Rp6.000.000 </option>  
-                            <option value="Rp6000000-Rp10000000|1">Rp6.000.000 - Rp10.000.000 </option>  
-                        </select>
+                            >
                         </div>
 
                         <div class="mb-4">
                             <label for="penghasilan_ibu" class="block text-sm font-medium text-gray-700">
                                 Penghasilan Ibu
                             </label>
-                            <select
+                            <input
+                                type="number"
                                 id="penghasilan_ibu"
                                 name="penghasilan_ibu"
                                 class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
                                 placeholder="Masukkan Penghasilan Ibu" required
-                            > 
-                            <option value="0">Pilih Penghasilan Ibu </option>
-                            <option value="Rp0-Rp300000|9">Rp0 - Rp300.000 </option>  
-                            <option value="Rp300000-Rp500000|8">Rp300.000 - Rp500.000 </option>  
-                            <option value="Rp500000-Rp1000000|7">Rp500.000 - Rp1.000.000 </option>  
-                            <option value="Rp1000000-Rp1500000|6">Rp1.000.000 - Rp1.500.000 </option>  
-                            <option value="Rp1500000-Rp1800000|5">Rp1.500.000 - Rp1.800.000 </option>                      
-                            <option value="Rp1800000-Rp3000000|4">Rp1.800.000 - Rp3.000.000 </option>  
-                            <option value="Rp3000000-Rp4900000|3">Rp3.000.000 - Rp4.900.000 </option>  
-                            <option value="Rp4900000-Rp6000000|2">Rp4.900.000 - Rp6.000.000 </option>  
-                            <option value="Rp6000000-Rp10000000|1">Rp6.000.000 - Rp10.000.000 </option>
-
-                            </select>
+                            >
                         </div>
 
                         <div class="mb-4">
                             <label for="jumlah_saudara" class="block text-sm font-medium text-gray-700">
                                 Jumlah Saudara
                             </label>
-                            <select
+                            <input
+                                type="number"
                                 id="jumlah_saudara"
                                 name="jumlah_saudara"
                                 class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
                                 placeholder="Masukkan Jumlah Saudara" required
                             >
-                            <option value="0">Pilih Jumlah Sodara </option>
-                            <option value="5-9">5 orang </option>  
-                            <option value="4-8">4 orang </option>  
-                            <option value="3-7">3 orang </option>
-                            <option value="2-6">2 orang </option>
-                            <option value="1-5">1 orang </option>
-                            <option value="0-4">Tidak ada </option>
-                            </select>
-                        </div>
-
-                        <div class="mb-4">
-                            <label for="prestasi" class="block text-sm font-medium text-gray-700">
-                                Prestasi
-                            </label>
-                            <select
-                                id="prestasi"
-                                name="prestasi"
-                                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
-                                placeholder="Masukkan Prestasi" required
-                            >
-                            <option value="0">Pilih Prestasi </option>
-                            <option value="Lokal|2">Lokal </option>  
-                            <option value="Kecamatan|3">Kecamatan </option>  
-                            <option value="Kabupaten|4">Kabupaten </option>
-                            <option value="Provinsi|5">Provinsi </option>    
-                         </select>
                         </div>
 
 

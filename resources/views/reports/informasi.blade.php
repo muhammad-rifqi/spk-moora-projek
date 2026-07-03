@@ -25,12 +25,12 @@
                         <tbody>
                             <?php $no = 1; ?>
                             @foreach($data as $rows)
-                            <?php $exp = explode("-",$rows->alternative); ?>
+                            <?php //$exp = explode("-",$rows->alternative); ?>
                             <tr>
                                 <td align="left">#{{$rows->id}}</td>
-                                <td align="left">{{$exp[1]}}</td>
-                                <td align="left">{{$exp[0]}}</td>
-                                <td align="left">{{$rows->jumlah}}</td>
+                                <td align="left">{{$rows->nis_nim}}</td>
+                                <td align="left">{{$rows->nama}}</td>
+                                <td align="left">{{floor($rows->bobot1 + $rows->bobot2 + $rows->bobot3 + $rows->bobot4)}}</td>
                                 <td align="left">{{$no}}</td>
                             </tr>
                             <?php $no++; ?>

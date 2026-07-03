@@ -44,13 +44,13 @@
                             Siswa
                         </a>
 
-                        <!-- <a href="/criteria" class="block px-4 py-2 hover:bg-gray-100">
+                        <a href="/criteria" class="block px-4 py-2 hover:bg-gray-100">
                             Kriteria
                         </a>
 
                         <a href="/alternative" class="block px-4 py-2 hover:bg-gray-100">
                             Altenative
-                        </a> -->
+                        </a>
 
                     </div>
                 </div>
@@ -141,11 +141,11 @@
                     </div>
                 </div> -->
                 @if(Auth::user()->role == 'admin' || Auth::user()->role == 'operator' || Auth::user()->role == 'kepala_sekolah')
-                <!-- <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                      <a href="/pip" class="inline-flex items-center px-3 py-2 text-sm font-medium text-gray-700 hover:text-indigo-600">
                         PIP
                     </a>
-                </div> -->
+                </div>
                 @endif 
 
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">

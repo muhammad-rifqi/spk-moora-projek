@@ -26,10 +26,6 @@
                             <tr>
                                 <th>Nis</th>
                                 <th>Nama</th>
-                                <th>JK</th>
-                                <th>Tempat Lahir</th>
-                                <th>Tanggal Lahir</th>
-                                <th>Alamat</th>
                                 <th>Penghasilan Ayah</th>
                                 <th>Penghasilan Ibu</th>
                                 <th>Jumlah Sodara</th>
@@ -42,10 +38,6 @@
                             <tr>
                                 <td>{{$data->nis_nim}}</td>
                                 <td>{{$data->nama}}</td>
-                                <td>{{$data->jenis_kelamin}}</td>
-                                <td>{{$data->tempat_lahir}}</td>
-                                <td>{{$data->tanggal_lahir}}</td>
-                                <td>{{$data->alamat}}</td>
                                 <td>{{$data->penghasilan_ayah}}</td>
                                 <td>{{$data->penghasilan_ibu}}</td>
                                 <td>{{$data->jumlah_saudara}}</td>
@@ -59,15 +51,11 @@
                             <tr>
                                 <th>Nis</th>
                                 <th>Nama</th>
-                                <th>JK</th>
-                                <th>Tempat Lahir</th>
-                                <th>Tanggal Lahir</th>
-                                <th>Alamat</th>
                                 <th>Penghasilan Ayah</th>
                                 <th>Penghasilan Ibu</th>
                                 <th>Jumlah Sodara</th>
                                 <th>Prestasi</th>
-                                 <th>#</th>
+                                <th>#</th>
                             </tr>
                         </tfoot>
                     </table>

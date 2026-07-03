@@ -13,7 +13,7 @@ class CandidateController extends Controller
      */
     public function index()
     {
-        $siswa = DB::table('candidates')->get();
+        $siswa = DB::table('candidates')->orderBy('id','desc')->get();
         return view('candidates.index', compact('siswa'));
     }
 
@@ -39,10 +39,14 @@ class CandidateController extends Controller
                 "tempat_lahir"=>$request->tempat_lahir,
                 "tanggal_lahir"=>$request->tanggal_lahir,
                 "alamat"=>$request->address,
-                "prestasi"=>$request->prestasi,
-                "penghasilan_ayah"=>$request->penghasilan_ayah,
-                "penghasilan_ibu"=>$request->penghasilan_ibu,
-                "jumlah_saudara"=>$request->jumlah_saudara,
+                "prestasi"=>explode("|",$request->prestasi)[0],
+                "bobot1"=>explode("|",$request->prestasi)[1],
+                "penghasilan_ayah"=>explode("|",$request->penghasilan_ayah)[0],
+                "bobot2"=>explode("|",$request->penghasilan_ayah)[1],
+                "penghasilan_ibu"=>explode("|",$request->penghasilan_ibu)[0],
+                "bobot3"=>explode("|",$request->penghasilan_ibu)[1],
+                "jumlah_saudara"=>explode("-",$request->jumlah_saudara)[0],
+                "bobot4"=>explode("-",$request->jumlah_saudara)[1],
                 "created_at"=>date("Y-m-d H:i:s"),
                 "updated_at"=>date("Y-m-d H:i:s"),
         ];
@@ -89,10 +93,14 @@ class CandidateController extends Controller
                 "tempat_lahir"=>$request->tempat_lahir,
                 "tanggal_lahir"=>$request->tanggal_lahir,
                 "alamat"=>$request->address,
-                "prestasi"=>$request->prestasi,
-                "penghasilan_ayah"=>$request->penghasilan_ayah,
-                "penghasilan_ibu"=>$request->penghasilan_ibu,
-                "jumlah_saudara"=>$request->jumlah_saudara,
+                "prestasi"=>explode("|",$request->prestasi)[0],
+                "bobot1"=>explode("|",$request->prestasi)[1],
+                "penghasilan_ayah"=>explode("|",$request->penghasilan_ayah)[0],
+                "bobot2"=>explode("|",$request->penghasilan_ayah)[1],
+                "penghasilan_ibu"=>explode("|",$request->penghasilan_ibu)[0],
+                "bobot3"=>explode("|",$request->penghasilan_ibu)[1],
+                "jumlah_saudara"=>explode("-",$request->jumlah_saudara)[0],
+                "bobot4"=>explode("-",$request->jumlah_saudara)[1],
                 "created_at"=>date("Y-m-d H:i:s"),
                 "updated_at"=>date("Y-m-d H:i:s"),
         ];

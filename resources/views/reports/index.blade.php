@@ -18,29 +18,29 @@
                    <table class="display p-3" width="100%" border="1" cellpadding="10" cellspacing="0">
                         <thead>
                             <tr style="border-bottom: 1px solid #000;">
-                                <th align="left">ID</th>
-                                <th align="left">NIS</th>
-                                <th align="left">Nama</th>
-                                <th align="left">Kriteria 1</th>
-                                <th align="left">Kriteria 2</th>
-                                <th align="left">Kriteria 3</th>
-                                <th align="left">Kriteria 4</th>
-                                <th align="left">NILAI</th>
+                                    <th align="left">No</th>
+                                    <th align="left">NIS</th>
+                                    <th align="left">Nama</th>
+                                    <th align="left">Kriteria Prestasi</th>
+                                    <th align="left">Kriteria Penghasilan Ayah</th>
+                                    <th align="left">KriteriaPenghasilan Ibu</th>
+                                    <th align="left">Kriteria Jumlah Saudara 4</th>
+                                    <th align="left">NILAI</th>
                             </tr>
                         </thead>
                         <tbody>
                             <?php $no = 1; ?>
                             @foreach($laporan as $data)
-                            <?php $expw = explode("-",$data->alternative); ?>
+                            <?php //$expw = explode("-",$data->alternative); ?>
                             <tr>
-                                <td align="left">{{$no}}</td>
-                                <td align="left">{{$expw[0]}}</td>
-                                <td align="left">{{$expw[1]}}</td>
-                                <td align="left">{{$data->c1}}</td>
-                                <td align="left">{{$data->c2}}</td>
-                                <td align="left">{{$data->c3}}</td>
-                                <td align="left">{{$data->c4}}</td>
-                                <td align="left">{{$data->jumlah}}</td>
+                                <th align="left">{{$no}}</th>
+                                <td align="left">{{$data->nis_nim}}</td>
+                                <td align="left">{{$data->nama}}</td>
+                                <td align="left">{{$data->bobot1}}</td>
+                                <td align="left">{{$data->bobot2}}</td>
+                                <td align="left">{{$data->bobot3}}</td>
+                                <td align="left">{{$data->bobot4}}</td>
+                                <td align="left">{{floor($data->bobot1 + $data->bobot2 + $data->bobot3 + $data->bobot4)}}</td>
                             </tr>
                             <?php $no++; ?>
                             @endforeach

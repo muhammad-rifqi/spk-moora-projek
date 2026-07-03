@@ -29,26 +29,26 @@
             <th align="left">No</th>
             <th align="left">NIS</th>
             <th align="left">Nama</th>
-            <th align="left">Prestasi</th>
-            <th align="left">Penghasilan Ayah</th>
-            <th align="left">Penghasilan Ibu</th>
-            <th align="left">Jumlah Saudara 4</th>
+            <th align="left">Kriteria 1</th>
+            <th align="left">Kriteria 2</th>
+            <th align="left">Kriteria3</th>
+            <th align="left">Kriteria 4</th>
             <th align="left">NILAI</th>
         </tr>
     </thead>
     <tbody>
         <?php $no = 1; ?>
         @foreach($rows as $data)
-        <?php //$exp = explode("-",$data->alternative); ?>
+        <?php $exp = explode("-",$data->alternative); ?>
         <tr>
             <th align="left">{{$no}}</th>
-            <td align="left">{{$data->nis_nim}}</td>
-            <td align="left">{{$data->nama}}</td>
-            <td align="left">{{$data->bobot1}}</td>
-            <td align="left">{{$data->bobot2}}</td>
-            <td align="left">{{$data->bobot3}}</td>
-            <td align="left">{{$data->bobot4}}</td>
-            <td align="left">{{floor($data->bobot1 + $data->bobot2 + $data->bobot3 + $data->bobot4)}}</td>
+            <td align="left">{{$exp[0]}}</td>
+            <td align="left">{{$exp[1]}}</td>
+            <td align="left">{{$data->c1}}</td>
+            <td align="left">{{$data->c2}}</td>
+            <td align="left">{{$data->c3}}</td>
+            <td align="left">{{$data->c4}}</td>
+            <td align="left">{{$data->jumlah}}</td>
         </tr>
         <?php $no++; ?>
         @endforeach

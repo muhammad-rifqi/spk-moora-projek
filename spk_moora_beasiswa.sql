@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 28, 2026 at 03:30 PM
+-- Generation Time: Jul 03, 2026 at 04:50 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.1.25
 
@@ -70,9 +70,13 @@ CREATE TABLE `candidates` (
   `tanggal_lahir` date DEFAULT NULL,
   `alamat` text DEFAULT NULL,
   `prestasi` varchar(20) DEFAULT NULL,
-  `penghasilan_ayah` int(11) NOT NULL DEFAULT 0,
-  `penghasilan_ibu` int(11) NOT NULL DEFAULT 0,
-  `jumlah_saudara` int(11) NOT NULL DEFAULT 0,
+  `bobot1` int(11) NOT NULL DEFAULT 0,
+  `penghasilan_ayah` varchar(100) DEFAULT NULL,
+  `bobot2` int(11) NOT NULL DEFAULT 0,
+  `penghasilan_ibu` varchar(100) DEFAULT NULL,
+  `bobot3` int(11) NOT NULL DEFAULT 0,
+  `jumlah_saudara` varchar(100) DEFAULT NULL,
+  `bobot4` int(11) NOT NULL DEFAULT 0,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -81,9 +85,10 @@ CREATE TABLE `candidates` (
 -- Dumping data for table `candidates`
 --
 
-INSERT INTO `candidates` (`id`, `nis_nim`, `nama`, `jenis_kelamin`, `tempat_lahir`, `tanggal_lahir`, `alamat`, `prestasi`, `penghasilan_ayah`, `penghasilan_ibu`, `jumlah_saudara`, `created_at`, `updated_at`) VALUES
-(3, '12345678', 'Muhammad Rifqi', 'L', 'Payakumbuh', '1988-12-27', 'tangerang', '-', 100000, 0, 4, '2026-06-13 08:45:52', '2026-06-13 08:45:52'),
-(4, '1234567891234', 'Zaqi', 'L', 'Padang', '1983-07-20', 'Bukti Tinggi', '-', 2000000, 0, 2, '2026-06-13 08:46:42', '2026-06-13 08:46:42');
+INSERT INTO `candidates` (`id`, `nis_nim`, `nama`, `jenis_kelamin`, `tempat_lahir`, `tanggal_lahir`, `alamat`, `prestasi`, `bobot1`, `penghasilan_ayah`, `bobot2`, `penghasilan_ibu`, `bobot3`, `jumlah_saudara`, `bobot4`, `created_at`, `updated_at`) VALUES
+(3, '12345678', 'Muhammad Rifqi', 'L', 'Payakumbuh', '1988-12-27', 'tangerang', 'Kabupaten', 4, 'Rp500000-Rp1000000', 7, 'Rp1000000-Rp1500000', 6, '4', 8, '2026-07-03 07:34:21', '2026-07-03 07:34:21'),
+(4, '1234567891234', 'Zaqi', 'L', 'Padang', '1983-07-20', 'Bukti Tinggi', 'Provinsi', 5, 'Rp1500000-Rp1800000', 5, 'Rp300000-Rp500000', 8, '3', 7, '2026-07-03 07:34:35', '2026-07-03 07:34:35'),
+(5, '12345678895', 'Rudianto', 'L', 'Payakumbuh', '1988-02-12', 'jakarta', 'Kecamatan', 3, 'Rp300000-Rp500000', 8, 'Rp300000-Rp500000', 8, '4', 8, '2026-07-03 07:18:13', '2026-07-03 07:18:13');
 
 -- --------------------------------------------------------
 
@@ -134,7 +139,7 @@ CREATE TABLE `users` (
   `name` varchar(150) NOT NULL,
   `email` varchar(150) NOT NULL,
   `password` varchar(255) NOT NULL,
-  `role` enum('admin','operator','kepala_sekolah','siswa') DEFAULT 'admin',
+  `role` enum('admin','operator','kepala_sekolah','siswa') DEFAULT 'siswa',
   `remember_token` varchar(100) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -146,7 +151,8 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `name`, `email`, `password`, `role`, `remember_token`, `created_at`, `updated_at`) VALUES
 (2, 'Administrator', 'admin@sekolah.sch.id', '$2y$12$S51igzVxUwRwhi/ZCKtqrufPhwolQimFSI1CO9EFEdqtz4VsJ80.S', 'admin', NULL, '2026-06-05 21:18:39', '2026-06-05 21:18:39'),
-(3, 'Siswa', 'siswa@sekolah.sch.id', '$2y$12$P8tVRejQPQ63.85CdZrv1O0rh9Dn3C74QSYsdPSdxPmmxO46WqNPe', 'siswa', NULL, '2026-06-28 06:05:23', '2026-06-28 06:05:23');
+(3, 'Siswa', 'siswa@sekolah.sch.id', '$2y$12$P8tVRejQPQ63.85CdZrv1O0rh9Dn3C74QSYsdPSdxPmmxO46WqNPe', 'siswa', NULL, '2026-06-28 06:05:23', '2026-06-28 06:05:23'),
+(4, 'rifki', 'muhammad45rifqi@gmail.com', '$2y$12$OP4SybefweI68ZkhH5y/L.5GKx2ewB7Vcnvic0brV3yhL6jLlivpe', 'siswa', NULL, '2026-06-28 06:56:37', '2026-06-28 06:56:37');
 
 --
 -- Indexes for dumped tables
@@ -197,7 +203,7 @@ ALTER TABLE `alternative`
 -- AUTO_INCREMENT for table `candidates`
 --
 ALTER TABLE `candidates`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `criteria`
@@ -215,7 +221,7 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
