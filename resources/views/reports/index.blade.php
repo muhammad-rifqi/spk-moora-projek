@@ -15,7 +15,7 @@
                             Cetak Laporan
                         </a>
                     </div>
-                   <table class="display p-3" width="100%" border="1" cellpadding="10" cellspacing="0">
+                   <table class="display p-3" width="100%" border="1" cellpadding="10" cellspacing="0" style="font-size: 12px;">
                         <thead>
                             <tr style="border-bottom: 1px solid #000;">
                                     <th align="left">No</th>

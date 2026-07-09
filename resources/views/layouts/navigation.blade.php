@@ -44,11 +44,11 @@
                             Siswa
                         </a>
 
-                        <!-- <a href="/criteria" class="block px-4 py-2 hover:bg-gray-100">
+                         <a href="/criteria" class="block px-4 py-2 hover:bg-gray-100">
                             Kriteria
                         </a>
 
-                        <a href="/alternative" class="block px-4 py-2 hover:bg-gray-100">
+                        <!-- <a href="/alternative" class="block px-4 py-2 hover:bg-gray-100">
                             Altenative
                         </a> -->
 

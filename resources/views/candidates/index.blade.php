@@ -21,11 +21,13 @@
                             + Tambah Siswa
                         </a>
                     </div>
-                   <table id="datasiswa" class="display">
+                   <table id="datasiswa" class="display" style="font-size: 12px;">
                         <thead>
                             <tr>
                                 <th>Nis</th>
                                 <th>Nama</th>
+                                <th>JK</th>
+                                <th>TTL</th>
                                 <th>Penghasilan Ayah</th>
                                 <th>Penghasilan Ibu</th>
                                 <th>Jumlah Sodara</th>
@@ -38,6 +40,8 @@
                             <tr>
                                 <td>{{$data->nis_nim}}</td>
                                 <td>{{$data->nama}}</td>
+                                <td>{{$data->jenis_kelamin}}</td>
+                                <td>{{$data->tempat_lahir}},{{$data->tanggal_lahir}}</td>
                                 <td>{{$data->penghasilan_ayah}}</td>
                                 <td>{{$data->penghasilan_ibu}}</td>
                                 <td>{{$data->jumlah_saudara}}</td>
