@@ -21,10 +21,10 @@
                                     <th align="left">No</th>
                                     <th align="left">NIS</th>
                                     <th align="left">Nama</th>
-                                    <th align="left">Kriteria Prestasi</th>
-                                    <th align="left">Kriteria Penghasilan Ayah</th>
-                                    <th align="left">KriteriaPenghasilan Ibu</th>
-                                    <th align="left">Kriteria Jumlah Saudara 4</th>
+                                    <th align="left">C1</th>
+                                    <th align="left">C2</th>
+                                    <th align="left">C3</th>
+                                    <th align="left">C4</th>
                                     <th align="left">NILAI</th>
                             </tr>
                         </thead>
@@ -45,6 +45,18 @@
                             <?php $no++; ?>
                             @endforeach
                         </tbody>
+                        <tfoot>
+                            <tr>
+                                <th align="left">No</th>
+                                <th align="left">NIS</th>
+                                <th align="left">Nama</th>
+                                <th align="left">C1</th>
+                                <th align="left">C2</th>
+                                <th align="left">C3</th>
+                                <th align="left">C4</th>
+                                <th align="left">NILAI</th>
+                            </tr>
+                        </tfoot>
                     </table>
                 </div>
             </div>

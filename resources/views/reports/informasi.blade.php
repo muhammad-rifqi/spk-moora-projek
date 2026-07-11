@@ -36,6 +36,15 @@
                             <?php $no++; ?>
                             @endforeach
                         </tbody>
+                        <tfoot>
+                            <tr>
+                                <th align="left">ID APP</th>
+                                <th align="left">Nama</th>
+                                <th align="left">NIS</th>
+                                <th align="left">NILAI</th>
+                                <th align="left">Ranking</th>
+                            </tr>
+                        </tfoot>
                     </table>
                 </div>
             </div>

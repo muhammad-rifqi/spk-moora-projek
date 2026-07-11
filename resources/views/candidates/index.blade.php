@@ -55,6 +55,8 @@
                             <tr>
                                 <th>Nis</th>
                                 <th>Nama</th>
+                                <th>JK</th>
+                                <th>TTL</th>
                                 <th>Penghasilan Ayah</th>
                                 <th>Penghasilan Ibu</th>
                                 <th>Jumlah Sodara</th>
