@@ -30,7 +30,7 @@
                                 <td align="left">#{{$rows->id}}</td>
                                 <td align="left">{{$rows->nis_nim}}</td>
                                 <td align="left">{{$rows->nama}}</td>
-                                <td align="left">{{$nilai}}</td>
+                                <td align="left">{{$rows->$nilai}}</td>
                                 <td align="left">{{$no}}</td>
                             </tr>
                             <?php $no++; ?>
