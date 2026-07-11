@@ -17,16 +17,37 @@ class ReportController extends Controller
         
 
         //$laporan = DB::table('alternative')->orderBy('jumlah', 'desc')->limit(20)->get();
-        $laporan = DB::table('candidates')->orderBy('id','desc')->get();
+        // $laporan = DB::table('candidates')->orderBy('id','desc')->get();
+        // return view('reports.index', compact('laporan'));
+
+        $laporan = DB::table('candidates')->select('*',
+            DB::raw('
+                (bobot1 * 0.45) +
+                (bobot2 * 0.25) +
+                (bobot3 * 0.10) +
+                (bobot4 * 0.20) as nilai
+            ')
+        )->orderByDesc('nilai')->get();
+
         return view('reports.index', compact('laporan'));
+
 
     }
 
 
     public function pdf()
         {
-             $laporan = DB::table('candidates')->orderBy('id','desc')->get();
+            //  $laporan = DB::table('candidates')->orderBy('id','desc')->get();
             //  $laporan = DB::table('alternative')->orderBy('jumlah', 'desc')->get();
+
+            $laporan = DB::table('candidates')->select('*',
+            DB::raw('
+                (bobot1 * 0.45) +
+                (bobot2 * 0.25) +
+                (bobot3 * 0.10) +
+                (bobot4 * 0.20) as nilai
+            ')
+        )->orderByDesc('nilai')->get();
 
             $pdf = Pdf::loadView('reports.laporan', [
                 'rows' => $laporan
@@ -86,7 +107,16 @@ class ReportController extends Controller
     public function informasi()
     {
         // $data = DB::table('alternative')->orderBy('jumlah', 'desc')->limit(20)->get();
-        $data = DB::table('candidates')->orderBy('id','desc')->get();
+        // $data = DB::table('candidates')->orderBy('id','desc')->get();
+        // return view('reports.informasi', compact('data'));
+          $data = DB::table('candidates')->select('*',
+            DB::raw('
+                (bobot1 * 0.45) +
+                (bobot2 * 0.25) +
+                (bobot3 * 0.10) +
+                (bobot4 * 0.20) as nilai
+            ')
+        )->orderByDesc('nilai')->get();
         return view('reports.informasi', compact('data'));
     }
 }

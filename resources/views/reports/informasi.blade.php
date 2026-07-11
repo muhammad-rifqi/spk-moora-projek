@@ -30,7 +30,7 @@
                                 <td align="left">#{{$rows->id}}</td>
                                 <td align="left">{{$rows->nis_nim}}</td>
                                 <td align="left">{{$rows->nama}}</td>
-                                <td align="left">{{floor($rows->bobot1 + $rows->bobot2 + $rows->bobot3 + $rows->bobot4)}}</td>
+                                <td align="left">{{($rows->bobot1 * 0.45) + ($rows->bobot2 * 0.25) + ($rows->bobot3 * 0.10) + ($rows->bobot4 * 0.20)}}</td>
                                 <td align="left">{{$no}}</td>
                             </tr>
                             <?php $no++; ?>
