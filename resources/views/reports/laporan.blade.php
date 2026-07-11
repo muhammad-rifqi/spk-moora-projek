@@ -48,7 +48,7 @@
             <td align="left">{{$data->bobot2}}</td>
             <td align="left">{{$data->bobot3}}</td>
             <td align="left">{{$data->bobot4}}</td>
-            <td align="left">{{$data->$nilai}}</td>
+            <td align="left">{{$data->nilai}}</td>
         </tr>
         <?php $no++; ?>
         @endforeach
