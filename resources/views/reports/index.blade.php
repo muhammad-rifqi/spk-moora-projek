@@ -21,10 +21,10 @@
                                     <th align="left">No</th>
                                     <th align="left">NIS</th>
                                     <th align="left">Nama</th>
-                                    <th align="left">C1</th>
-                                    <th align="left">C2</th>
-                                    <th align="left">C3</th>
-                                    <th align="left">C4</th>
+                                    <th align="left">Penghasilan Ayah(Bobot)</th>
+                                    <th align="left">Penghasilan Ibu(Bobot)</th>
+                                    <th align="left">Jumlah Sodara(Bobot)</th>
+                                    <th align="left">Prestasi(Bobot)</th>
                                     <th align="left">NILAI</th>
                             </tr>
                         </thead>
@@ -36,10 +36,10 @@
                                 <th align="left">{{$no}}</th>
                                 <td align="left">{{$data->nis_nim}}</td>
                                 <td align="left">{{$data->nama}}</td>
-                                <td align="left">{{$data->bobot1}}</td>
-                                <td align="left">{{$data->bobot2}}</td>
-                                <td align="left">{{$data->bobot3}}</td>
-                                <td align="left">{{$data->bobot4}}</td>
+                                <td align="left">(<b>{{$data->bobot1}}</b> * 0.45) =  {{($data->bobot1 * 0.45)}}</td>
+                                <td align="left">(<b>{{$data->bobot2}}</b> * 0.25) = {{($data->bobot2 * 0.25)}}</td>
+                                <td align="left">(<b>{{$data->bobot3}}</b> * 0.10) = {{($data->bobot3* 0.10)}}</td>
+                                <td align="left">(<b>{{$data->bobot4}}</b> * 0.20) = {{($data->bobot4 * 0.20)}}</td>
                                 <td align="left">{{$data->nilai}}</td>
                             </tr>
                             <?php $no++; ?>
@@ -50,10 +50,10 @@
                                 <th align="left">No</th>
                                 <th align="left">NIS</th>
                                 <th align="left">Nama</th>
-                                <th align="left">C1</th>
-                                <th align="left">C2</th>
-                                <th align="left">C3</th>
-                                <th align="left">C4</th>
+                                <th align="left">Penghasilan Ayah(Bobot)</th>
+                                <th align="left">Penghasilan Ibu(Bobot)</th>
+                                <th align="left">Jumlah Sodara(Bobot)</th>
+                                <th align="left">Prestasi(Bobot)</th>
                                 <th align="left">NILAI</th>
                             </tr>
                         </tfoot>
