@@ -49,9 +49,10 @@ class CandidateController extends Controller
                 continue;
             }
             $data[] = [
-                'nis_nim' => $row[1],
-                'nama' => $row[2],
-                'jenis_kelamin' => $row[3],
+                'nis_nim' => $row[0],
+                'nama' => $row[1],
+                'jenis_kelamin' => $row[2],
+                'tempat_lahir' => $row[3],
                 'tanggal_lahir' => $row[4],
                 'alamat' => $row[5],
                 'prestasi' => $row[6],
@@ -66,10 +67,10 @@ class CandidateController extends Controller
                 'updated_at' => NOW(),
             ];
         }
-       
+        
         DB::table('candidates')->insert($data);
 
-        return view('candidates.index');
+       return redirect('/candidates')->with('status', 'Success Imported');
     
     }
 
