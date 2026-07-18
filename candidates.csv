@@ -1,0 +1,4 @@
+"id","nis_nim","nama","jenis_kelamin","tempat_lahir","tanggal_lahir","alamat","prestasi","bobot1","penghasilan_ayah","bobot2","penghasilan_ibu","bobot3","jumlah_saudara","bobot4","created_at","updated_at"
+"3","12345678","Muhammad Rifqi","L","Payakumbuh","1988-12-27","tangerang","Kabupaten","4","Rp500000-Rp1000000","7","Rp1000000-Rp1500000","6","4","8","2026-07-03 14:34:21","2026-07-03 14:34:21"
+"4","1234567891234","Zaqi","L","Padang","1983-07-20","Bukti Tinggi","Provinsi","5","Rp1500000-Rp1800000","5","Rp300000-Rp500000","8","3","7","2026-07-03 14:34:35","2026-07-03 14:34:35"
+"5","12345678895","Rudianto","L","Payakumbuh","1988-02-12","jakarta","Kecamatan","3","Rp300000-Rp500000","8","Rp300000-Rp500000","8","4","8","2026-07-03 14:18:13","2026-07-03 14:18:13"

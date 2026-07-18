@@ -19,6 +19,9 @@
                         <a href="/candidates/add"
                         class="bg-blue-500 hover:bg-blue-100 text-white font-bold py-2 px-4 rounded" style="background-color: blue">
                             + Tambah Siswa
+                        </a> | <a href="/candidates/import"
+                        class="bg-blue-500 hover:bg-blue-100 text-white font-bold py-2 px-4 rounded" style="background-color: blue">
+                            + Import Siswa
                         </a>
                     </div>
                    <table id="datasiswa" class="display" style="font-size: 12px;">

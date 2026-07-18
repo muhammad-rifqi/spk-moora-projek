@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use PhpOffice\PhpSpreadsheet\IOFactory;
 
 class CandidateController extends Controller
 {
@@ -21,9 +22,45 @@ class CandidateController extends Controller
      * Show the form for creating a new resource.
      * (Menampilkan halaman form tambah kandidat)
      */
-    public function create()
+    public function create ()
     {
         return view('candidates.create');
+    }
+
+    public function import ()
+    {
+        return view('candidates.import');
+    }
+
+    public function imports (Request $request)
+    {
+         $request->validate([
+            'file_excel' => 'required|file|mimes:xlsx,xls'
+        ]);
+        $spreadsheet = IOFactory::load(
+            $request->file('file_excel')->getRealPath()
+        );
+        $sheet = $spreadsheet->getActiveSheet();
+        $rows = $sheet->toArray();
+        array_shift($rows);
+        $data = [];
+        foreach ($rows as $row) {
+            if (empty($row[0])) {
+                continue;
+            }
+            $data[] = [
+                'name' => $row[0],
+                'email' => $row[1],
+                'age' => $row[2],
+                'created_at' => now(),
+                'updated_at' => now(),
+            ];
+        }
+
+        DB::table('candidates')->insert($data);
+
+        return view('candidates.index');
+    
     }
 
     /**

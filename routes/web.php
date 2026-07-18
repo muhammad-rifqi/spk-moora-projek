@@ -36,6 +36,8 @@ Route::middleware('auth')->group(function () {
     
     Route::get('/candidates', [CandidateController::class, 'index']);
     Route::get('/candidates/add', [CandidateController::class, 'create']);
+    Route::get('/candidates/import', [CandidateController::class, 'import']);
+    Route::post('/candidates/imports', [CandidateController::class, 'imports']);
     Route::post('/candidates/store', [CandidateController::class, 'store']);
     Route::get('/candidates/edit/{id}', [CandidateController::class, 'edit']);
     Route::post('/candidates/update/{id}', [CandidateController::class, 'update']);
