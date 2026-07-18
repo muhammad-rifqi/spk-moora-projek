@@ -49,14 +49,24 @@ class CandidateController extends Controller
                 continue;
             }
             $data[] = [
-                'name' => $row[0],
-                'email' => $row[1],
-                'age' => $row[2],
-                'created_at' => now(),
-                'updated_at' => now(),
+                'nis_nim' => $row[1],
+                'nama' => $row[2],
+                'jenis_kelamin' => $row[3],
+                'tanggal_lahir' => $row[4],
+                'alamat' => $row[5],
+                'prestasi' => $row[6],
+                'bobot1' => $row[7],
+                'penghasilan_ayah' => $row[8],
+                'bobot2' => $row[9],
+                'penghasilan_ibu' => $row[10],
+                'bobot3' => $row[11],
+                'jumlah_saudara' => $row[12],
+                'bobot4' => $row[13],
+                'created_at' => NOW(),
+                'updated_at' => NOW(),
             ];
         }
-
+       
         DB::table('candidates')->insert($data);
 
         return view('candidates.index');
